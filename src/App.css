@@ -1,0 +1,34 @@
+
+.App {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    color: #fceedc;
+    background-color: rgb(70, 70, 70); 
+    padding-top: 1rem;
+    text-align: center;
+    
+}
+
+ul { 
+    width: 100px;
+    color: black;
+    list-style: none;
+    
+}
+.Colors {
+    display: flex;
+    
+    justify-content: center;
+    text-align: center;
+
+}
+.yellow {
+    background-color: yellow
+}
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
