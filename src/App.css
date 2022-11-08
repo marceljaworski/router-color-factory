@@ -11,18 +11,17 @@
 }
 
 ul { 
-    width: 100px;
-    color: black;
-    list-style: none;
-    
-}
-.Colors {
     display: flex;
-    
     justify-content: center;
-    text-align: center;
-
+    list-style: none; 
+    gap: 5px;
 }
+li {
+    width: 3rem;
+    height: 3rem;
+    
+}
+
 .yellow {
     background-color: yellow
 }

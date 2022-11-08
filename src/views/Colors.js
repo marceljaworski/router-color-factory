@@ -19,15 +19,16 @@ export default function Colors() {
     
     return (
         <div className="Colors">
-            <h3>Pick a color</h3>
+            <h3>Pick a color...</h3>
             <ul>
                 {colors.map(color => (
                 <div className={color.name} key={color.id}>
-                    <li className={color.name}>{color.name}</li>
-                    <Link to={`/colors/${color.name}`}>Show color</Link>
+                    <li><Link to={`/colors/${color.name}`}>{color.name}</Link></li>
+                    
                 </div>
             ))}
             </ul>
+            <span>...or look for a  </span><button>newOne</button>
 
         </div>
 
