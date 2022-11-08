@@ -11,22 +11,22 @@ import Error404 from './views/Error404'
 const colors = [
   {
       id: 1,
-      color: "red",
+      name: "red",
   },
   {
       id: 2,
-      color: "green",
+      name: "green",
   },
   {
       id: 3,
-      color: "yellow",
+      name: "yellow",
   },
 ]
-const ExistingProductView = () => {
+const ExistingColorView = () => {
   const params = useParams();
 
-  const productExists = !!colors.find(product => product.id === +params.id);
-  return productExists ? <Color /> : <Error404 />;
+  const colorExists = !!colors.find(color => color.name === params.name);
+  return colorExists ? <Color /> : <Error404 />;
 };
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/colors" element={<Colors />} />
-          <Route path="/products/:color" element={<ExistingProductView />} />
+          <Route path="/colors/:name" element={<ExistingColorView />} />
           <Route path="/colors/*" element={<Error404 />} />
             
           
