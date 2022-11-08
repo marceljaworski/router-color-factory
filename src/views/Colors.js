@@ -1,3 +1,6 @@
+import { Link, useParams } from "react-router-dom";
+
+
 const colors = [
     {
         id: 1,
@@ -5,7 +8,7 @@ const colors = [
     },
     {
         id: 2,
-        color: "blue",
+        color: "green",
     },
     {
         id: 3,
@@ -19,8 +22,14 @@ export default function Colors() {
             <h3>Pick a color</h3>
             <ul>
                 <li className="red">Red</li>
-                <li className="blue">Blue</li>
+                <li className="green">Green</li>
                 <li className="yellow">Yellow</li>
+                {colors.map(color => (
+                <ul className={color.name} key={color.id}>
+                    <li className={color.name}>{color.name}</li>
+                    <Link to={`/colors/${color.color}`}>Show color</Link>
+                </ul>
+            ))}
             </ul>
 
         </div>
