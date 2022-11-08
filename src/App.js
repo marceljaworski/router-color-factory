@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {BrowserRouter, Route, Routes, Link, useParams} from "react-router-dom";
-
 
 import './App.css';
 import Colors from './views/Colors';
 import Home from './views/Home';
 import Color from './views/Color';
-import Error404 from './views/Error404'
+import Error404 from './views/Error404';
+import New from './views/New';
 
 const colors = [
   {
@@ -29,7 +29,12 @@ const ExistingColorView = () => {
   return colorExists ? <Color /> : <Error404 />;
 };
 
+// const ClassHandler = () => {
+//   return !params? "title" : params.name;
+// }
 function App() {
+  const params = useParams();
+  console.log(params.name)
   return (
     <div className="App">
       <BrowserRouter>
@@ -37,11 +42,12 @@ function App() {
           <Link to="/">General view</Link>
          
         </header>
-        <h1>Color factory</h1>
+        <h1 className={!params? "title" : params.name}>Color factory</h1>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/colors" element={<Colors />} />
           <Route path="/colors/:name" element={<ExistingColorView />} />
+          <Route path="/colors/new" element={<New />} />
           <Route path="/colors/*" element={<Error404 />} />
             
           

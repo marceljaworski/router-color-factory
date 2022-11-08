@@ -28,7 +28,7 @@ export default function Colors() {
                 </div>
             ))}
             </ul>
-            <span>...or look for a  </span><button>newOne</button>
+            <span>...or look for a  </span><button><Link to={`/colors/new`}>newOne</Link></button>
 
         </div>
 
